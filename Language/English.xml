@@ -6,9 +6,10 @@
 	<Language Id="Eng" Text="English" />
 	<AboutForm Text="About">
 		<Controls>
-			<Control Id="lblVersion" Text="v3.0.6" />
+			<Control Id="lblVersion" Text="" />
 			<Control Id="lblCompany" Text="Radioddity and GD-77 Community" />
 			<Control Id="btnClose" Text="OK" />
+      <Control Id="lblTranslationCredit" Text="" />
 		</Controls>
 	</AboutForm>
 	<BootItemForm Text="Boot Item">
@@ -181,7 +182,7 @@
 			<Control Id="lblCallId" Text="Call ID" />
 		</Controls>
 		<Commons>
-			<Item Id="CallType" Text="Group All,Private Call,All Call" />
+			<Item Id="CallType" Text="Group Call,Private Call,All Call" />
 			<Item Id="CallRxTone" Text="Off,On" />
 		</Commons>
 	</ContactForm>
@@ -428,8 +429,11 @@
 			<MenuItem Id="tsmiLanguage" Text="Language" />
 			<MenuItem Id="tsmiEnglish" Text="English" />
 			<MenuItem Id="tsmiChinese" Text="Chinese" />
-      <MenuItem Id="tsmiExtras" Text="Extras" />      
-		</MenuStrip>
+      <MenuItem Id="tsmiExtras" Text="Extras" />
+      <MenuItem Id="tsmiContactsDownload" Text="Download contacts" />
+      <MenuItem Id="tsmiDMRID" Text="DMR ID" />
+      <MenuItem Id="tsmiCalibration" Text="Calibration viewer" />      
+    </MenuStrip>
 		<ContextMenuStrip>
 			<MenuItem Id="tsmiAdd" Text="Add" />
 			<MenuItem Id="tsmiClear" Text="Clear" />
@@ -714,12 +718,13 @@
 			<Control Id="lblName" Text="Name" />
 		</Controls>
 	</ZoneForm>
-  <DownloadContactsForm Text="Download contacts from 'Last Heard'">
+  <DownloadContactsForm Text="Download contacts'">
     <Controls>
       <Control Id="lblMessage" Text="Enter the ID prefix code for your region and press Download..." />
       <Control Id="btnImport" Text="Import selected" />
       <Control Id="btnSelectAll" Text="Select all" />      
-      <Control Id="btnDownload" Text="Download 'Last Heard' data" />
+      <Control Id="btnDownload" Text="Download from URL" />
+      <Control Id="btnDownloadDMRMARC" Text="Download from DRM MARC" />      
       <Control Id="lblIDStart" Text="Region Prefix code" />
       <Control Id="lblMessageDownloading" Text="Downloading" />
       <Control Id="dgvDownloadeContacts" Text="ID,Callsign,Name,Last heard">
@@ -730,6 +735,86 @@
       </Control>      
     </Controls>
   </DownloadContactsForm>
+  <CalibrationForm Text="Calibration viewer'">
+    <Controls>
+      <Control Id="btnSave" Text="Save" />
+      <Control Id="btnCancel" Text="Cancel" />
+        <Control Id="tabCtlBands" Text="" >
+          <ControlItem Id="tabVHF" Text="VHF">
+            <Control Id="calibrationBandControlVHF" Text="" >
+              <ControlItem Id="calibrationPowerControlHigh" Text="High power"/>
+              <ControlItem Id="calibrationPowerControlLow" Text=""/>
+              <ControlItem Id="calibrationTXIandQ" Text=""/>
+              <ControlItem Id=" grpAnalogTxDeviation" Text=""/>
+              <ControlItem Id="lblDTMF" Text=""/>
+              <ControlItem Id="lblToneBurst" Text=""/>
+              <ControlItem Id="lblAnalogTxDeviationWide" Text=""/>
+              <ControlItem Id="lblAnalogTxDeviationNarrow" Text=""/>
+              <ControlItem Id="lblOverallGain" Text=""/>
+              <ControlItem Id="grpSquelch" Text=""/>
+              <ControlItem Id="lblSquelchOpenNormal" Text=""/>
+              <ControlItem Id="lblSquelchCloseNormal" Text=""/>
+              <ControlItem Id="lblSquelchOpenTight" Text=""/>
+              <ControlItem Id="lblSquelchCloseTight" Text=""/>
+              <ControlItem Id="lblSquelchWide" Text=""/>
+              <ControlItem Id="lblSquelchNarrow" Text=""/>
+              <ControlItem Id="grpDigitalGain" Text=""/>
+              <ControlItem Id="lblDigitalGainRx" Text=""/>
+              <ControlItem Id="lblDigitalGainTx" Text=""/>
+              <ControlItem Id="lblDigitalGainWide" Text=""/>
+              <ControlItem Id="lblDigitalGainNarrow" Text=""/>
+              <ControlItem Id="grpAnalogGain" Text=""/>
+              <ControlItem Id="lblAnalogAudioGainRx" Text=""/>
+              <ControlItem Id="lblAnalogAudioGainWide" Text=""/>
+              <ControlItem Id="lblAnalogAudioGainNarrow" Text=""/>
+
+              <ControlItem Id="grpSMeter" Text=""/>
+              <ControlItem Id="lblSMeterLowEnd" Text=""/>
+              <ControlItem Id="lblSMeterHighEnd" Text=""/>
+
+              <ControlItem Id="lblReferenceOscTuning" Text=""/>
+              <ControlItem Id="lblReceiveAGCTarget" Text=""/>
+              <ControlItem Id="lblAnalogMicGain" Text=""/>
+            </Control>
+            <ControlItem Id="tabUHF" Text="UHF"/>
+          <Control Id="calibrationBandControlUHF" Text="" >
+            <ControlItem Id="calibrationPowerControlHigh" Text="High power"/>
+            <ControlItem Id="calibrationPowerControlLow" Text=""/>
+            <ControlItem Id="calibrationTXIandQ" Text=""/>
+            <ControlItem Id=" grpAnalogTxDeviation" Text=""/>
+            <ControlItem Id="lblDTMF" Text=""/>
+            <ControlItem Id="lblToneBurst" Text=""/>
+            <ControlItem Id="lblAnalogTxDeviationWide" Text=""/>
+            <ControlItem Id="lblAnalogTxDeviationNarrow" Text=""/>
+            <ControlItem Id="lblOverallGain" Text=""/>
+            <ControlItem Id="grpSquelch" Text=""/>
+            <ControlItem Id="lblSquelchOpenNormal" Text=""/>
+            <ControlItem Id="lblSquelchCloseNormal" Text=""/>
+            <ControlItem Id="lblSquelchOpenTight" Text=""/>
+            <ControlItem Id="lblSquelchCloseTight" Text=""/>
+            <ControlItem Id="lblSquelchWide" Text=""/>
+            <ControlItem Id="lblSquelchNarrow" Text=""/>
+            <ControlItem Id="grpDigitalGain" Text=""/>
+            <ControlItem Id="lblDigitalGainRx" Text=""/>
+            <ControlItem Id="lblDigitalGainTx" Text=""/>
+            <ControlItem Id="lblDigitalGainWide" Text=""/>
+            <ControlItem Id="lblDigitalGainNarrow" Text=""/>
+            <ControlItem Id="grpAnalogGain" Text=""/>
+            <ControlItem Id="lblAnalogAudioGainRx" Text=""/>
+            <ControlItem Id="lblAnalogAudioGainWide" Text=""/>
+            <ControlItem Id="lblAnalogAudioGainNarrow" Text=""/>
+            <ControlItem Id="grpSMeter" Text=""/>
+            <ControlItem Id="lblSMeterLowEnd" Text=""/>
+            <ControlItem Id="lblSMeterHighEnd" Text=""/>
+            <ControlItem Id="lblReferenceOscTuning" Text=""/>
+            <ControlItem Id="lblReceiveAGCTarget" Text=""/>
+            <ControlItem Id="lblAnalogMicGain" Text=""/>
+            </Control>
+        </ControlItem>
+      </Control>
+      <Control Id="lblMessageDownloading" Text="Downloading" />
+    </Controls>
+  </CalibrationForm>
 	<Commons>
 		<Item Id="None" Text="None" />
 		<Item Id="Selected" Text="Selected" />
@@ -774,5 +859,11 @@
     <Item Id="DownloadContactsImportComplete" Text="Import complete" />
     <Item Id="CodeplugUpgradeNotice" Text="This appears to be a V3.0.6 Codeplug. It will be converted to V3.1.x" />
     <Item Id="CodeplugUpgradeWarningToManyRxGroups" Text="Version 3.1.x can only have 76 Rx Groups. Additional Rx Groups have been ignored" />
+    <Item Id="CodeplugRead" Text="Reading codeplug from GD-77" />
+    <Item Id="CodeplugWrite" Text="Writing codeplug to GD-77" />
+    <Item Id="DMRIDRead" Text="Reading DMR ID database from GD-77" />
+    <Item Id="DMRIDWrite" Text="Writing DMR ID database to GD-77" />
+    <Item Id="CalibrationRead" Text="Reading calibration data from GD-77" />
+    <Item Id="CalibrationWrite" Text="Writing calibration data to GD-77" />
   </Commons>
 </Resource>

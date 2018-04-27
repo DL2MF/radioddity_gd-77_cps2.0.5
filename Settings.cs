@@ -181,6 +181,13 @@ internal class Settings
 	public static string SZ_CODEPLUG_UPGRADE_NOTICE = "This appears to be a V3.0.6 Codeplug. It will be converted to V3.1.x";
 	public static string SZ_CODEPLUG_UPGRADE_WARNING_TO_MANY_RX_GROUPS = "Version 3.1.x can only have 76 Rx Groups. Additional Rx Groups have been ignored";
 
+	public static string SZ_CODEPLUG_READ = "Reading codeplug from GD-77";
+	public static string SZ_CODEPLUG_WRITE = "Writing codeplug to GD-77";
+	public static string SZ_DMRID_READ = "Reading DMR ID database from GD-77";
+	public static string SZ_DMRID_WRITE = "Writing DMR ID database to GD-77";
+	public static string SZ_CALIBRATION_READ = "Reading calibration data from GD-77";
+	public static string SZ_CALIBRATION_WRITE = "Writing calibration data to GD-77";
+
 	public static int CUR_MODE;
 
 	public static uint[] MIN_FREQ;

@@ -9,6 +9,7 @@
 			<Control Id="lblVersion" Text="v3.0.6" />
 			<Control Id="lblCompany" Text="Radioddity und GD-77 Community" />
 			<Control Id="btnClose" Text="OK" />
+      <Control Id="lblTranslationCredit" Text="German version by DG9VH and DL2MF" />
 		</Controls>
 	</AboutForm>
 	<BootItemForm Text="Gerätestart">
@@ -429,6 +430,9 @@
 			<MenuItem Id="tsmiEnglish" Text="English" />
 			<MenuItem Id="tsmiChinese" Text="Chinese" />
       <MenuItem Id="tsmiExtras" Text="Extras" />
+      <MenuItem Id="tsmiContactsDownload" Text="Download contacts" />
+      <MenuItem Id="tsmiDMRID" Text="DMR ID" />
+      <MenuItem Id="tsmiCalibration" Text="Calibration viewer" />
     </MenuStrip>
 		<ContextMenuStrip>
 			<MenuItem Id="tsmiAdd" Text="Hinzufügen" />
@@ -715,12 +719,13 @@
 			<Control Id="lblName" Text="Zonenname" />
 		</Controls>
 	</ZoneForm>
-  <DownloadContactsForm Text="Download contacts from 'Last Heard'">
+  <DownloadContactsForm Text="Download contacts">
     <Controls>
       <Control Id="lblMessage" Text="Enter the ID prefix code for your region and press Download..." />
       <Control Id="btnImport" Text="Import selected" />
       <Control Id="btnSelectAll" Text="Select all" />
-      <Control Id="btnDownload" Text="Download 'Last Heard' data" />
+      <Control Id="btnDownload" Text="Download from URL" />
+      <Control Id="btnDownloadDMRMARC" Text="Download from DRM MARC" />
       <Control Id="lblIDStart" Text="Region Prefix code" />
       <Control Id="lblMessageDownloading" Text="Downloading" />
       <Control Id="dgvDownloadeContacts" Text="ID,Callsign,Name,Last heard">

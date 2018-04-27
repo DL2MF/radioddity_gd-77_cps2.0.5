@@ -15,13 +15,24 @@ namespace DMR
 		private FirmwareUpdate firmwareUpdate;
 		//private Class10 portComm;
 		private CodeplugComms hidComm;
+		private bool _closeWhenFinished = false;
+
+		/*
+
+		public CodeplugComms.CommunicationType CommunicationMode
+		{
+			get;
+			set;
+		}
+		 * */
+		/*
 
 		public bool IsRead
 		{
 			get;
 			set;
 		}
-
+		*/
 		public bool IsSucess
 		{
 			get;
@@ -67,7 +78,7 @@ namespace DMR
 			this.btnCancel.TabIndex = 2;
 			this.btnCancel.Text = "Cancel";
 			this.btnCancel.UseVisualStyleBackColor = true;
-			this.btnCancel.Click += this.btnCancel_Click;
+			this.btnCancel.Click += new EventHandler(this.btnCancel_Click);
 
             this.btnOK.Location = new Point(336, 161);
             this.btnOK.Margin = new Padding(3, 4, 3, 4);
@@ -76,7 +87,7 @@ namespace DMR
             this.btnOK.TabIndex = 3;
             this.btnOK.Text = "OK";
             this.btnOK.UseVisualStyleBackColor = true;
-            this.btnOK.Click += this.btnOK_Click;
+            this.btnOK.Click += new EventHandler(this.btnOK_Click);
             this.btnOK.Visible = false;
 
 
@@ -88,22 +99,22 @@ namespace DMR
 			base.Controls.Add(this.prgComm);
 			base.Controls.Add(this.lblPrompt);
 			this.Font = new Font("Arial", 10f, FontStyle.Regular);
-			base.FormBorderStyle = FormBorderStyle.FixedDialog;
-			base.Margin = new Padding(3, 4, 3, 4);
-			base.Name = "CommPrgForm";
-			base.ShowInTaskbar = false;
-			base.Load += this.CommPrgForm_Load;
-			base.FormClosing += this.CommPrgForm_FormClosing;
-			base.ResumeLayout(false);
+			this.FormBorderStyle = FormBorderStyle.FixedDialog;
+			this.Margin = new Padding(3, 4, 3, 4);
+			this.Name = "CommPrgForm";
+			this.ShowInTaskbar = false;
+			this.Load += this.CommPrgForm_Load;
+			this.FormClosing += this.CommPrgForm_FormClosing;
+			this.ResumeLayout(false);
 		}
 
-		public CommPrgForm()
+		public CommPrgForm(bool closeWhenFinished = false)
 		{
-			
+
+			this._closeWhenFinished = closeWhenFinished;
 			this.firmwareUpdate = new FirmwareUpdate();
-			//this.portComm = new Class10();
+
 			this.hidComm = new CodeplugComms();
-			//base._002Ector();
 			this.InitializeComponent();
 			base.Scale(Settings.smethod_6());
 		}
@@ -113,62 +124,86 @@ namespace DMR
 			Settings.smethod_68(this);
 			this.prgComm.Minimum = 0;
 			this.prgComm.Maximum = 100;
-			this.firmwareUpdate.method_3(this.IsRead);
-			if (this.IsRead)
+
+			//this.hidComm.CommunicationMode = CommunicationMode;
+
+			switch (CodeplugComms.CommunicationMode)
 			{
-				this.Text = Settings.dicCommon["Read"];
+				case CodeplugComms.CommunicationType.codeplugRead:
+					this.Text = Settings.dicCommon["CodeplugRead"];
+					break;
+				case CodeplugComms.CommunicationType.DMRIDRead:
+					this.Text = Settings.dicCommon["DMRIDRead"];
+					break;
+				case CodeplugComms.CommunicationType.calibrationRead:
+					this.Text = Settings.dicCommon["CalibrationRead"];
+					break;
+
+				case CodeplugComms.CommunicationType.codeplugWrite:
+					this.Text = Settings.dicCommon["CodeplugWrite"];
+					break;
+				case CodeplugComms.CommunicationType.DMRIDWrite:
+					this.Text = Settings.dicCommon["DMRIDWrite"];
+					break;
+				case CodeplugComms.CommunicationType.calibrationWrite:
+					this.Text = Settings.dicCommon["CalibrationWrite"];
+					break;
 			}
-			else
+
+			switch (CodeplugComms.CommunicationMode)
 			{
-				this.Text = Settings.dicCommon["Write"];
+				case CodeplugComms.CommunicationType.codeplugRead:
+				case CodeplugComms.CommunicationType.DMRIDRead:
+				case CodeplugComms.CommunicationType.calibrationRead:
+					this.hidComm.START_ADDR = new int[7]
+					{
+						128,
+						304,
+						21392,
+						29976,
+						32768,
+						44816,
+						95776
+					};
+					this.hidComm.END_ADDR = new int[7]
+					{
+						297,
+						14208,
+						22056,
+						30208,
+						32784,
+						45488,
+						126624
+					};
+					break;
+
+				case CodeplugComms.CommunicationType.codeplugWrite:
+				case CodeplugComms.CommunicationType.DMRIDWrite:
+				case CodeplugComms.CommunicationType.calibrationWrite:
+					this.hidComm.START_ADDR = new int[7]
+					{
+						128,
+						304,
+						21392,
+						29976,
+						32768,
+						44816,
+						95776
+					};
+					this.hidComm.END_ADDR = new int[7]
+					{
+						297,
+						14208,
+						22056,
+						30208,
+						32784,
+						45488,
+						126624
+					};
+					break;
 			}
-			this.hidComm.method_3(this.IsRead);
-			if (this.IsRead)
-			{
-				this.hidComm.START_ADDR = new int[7]
-				{
-					128,
-					304,
-					21392,
-					29976,
-					32768,
-					44816,
-					95776
-				};
-				this.hidComm.END_ADDR = new int[7]
-				{
-					297,
-					14208,
-					22056,
-					30208,
-					32784,
-					45488,
-					126624
-				};
-			}
-			else
-			{
-				this.hidComm.START_ADDR = new int[7]
-				{
-					128,
-					304,
-					21392,
-					29976,
-					32768,
-					44816,
-					95776
-				};
-				this.hidComm.END_ADDR = new int[7]
-				{
-					297,
-					14208,
-					22056,
-					30208,
-					32784,
-					45488,
-					126624
-				};
-			}
+
+
 			this.hidComm.method_9(this.method_0);
             this.hidComm.startCodeplugReadOrWriteInNewThread();
 		}
@@ -184,11 +219,13 @@ namespace DMR
 
 		private void btnCancel_Click(object sender, EventArgs e)
 		{
+			this.DialogResult = DialogResult.Cancel;
 			base.Close();
 		}
 
         private void btnOK_Click(object sender, EventArgs e)
         {
+			this.DialogResult = DialogResult.OK;
             base.Close();
         }
 
@@ -220,18 +257,39 @@ namespace DMR
 	            if (e.Percentage == (float)this.prgComm.Maximum)
                 {
                     this.IsSucess = true;
-                    
-                    
+
+					if (_closeWhenFinished)
+					{
+						this.DialogResult = DialogResult.OK;
+						this.Close();
+						return;
+					}
+
+					switch (CodeplugComms.CommunicationMode)
+					{
+						case CodeplugComms.CommunicationType.codeplugRead:
+						case CodeplugComms.CommunicationType.DMRIDRead:
+						case CodeplugComms.CommunicationType.calibrationRead:
+							this.lblPrompt.Text = Settings.dicCommon["ReadComplete"];
+							break;
+						case CodeplugComms.CommunicationType.codeplugWrite:
+						case CodeplugComms.CommunicationType.DMRIDWrite:
+						case CodeplugComms.CommunicationType.calibrationWrite:
+							this.lblPrompt.Text = Settings.dicCommon["WriteComplete"];
+							break;
+					}
+					/*
 					if (this.IsRead)
 					{
 						//MessageBox.Show(Class15.dicCommon["ReadComplete"]);
-                        this.lblPrompt.Text = Settings.dicCommon["ReadComplete"];
+						this.lblPrompt.Text = Settings.dicCommon["WriteComplete"];
 					}
 					else
 					{
 						//MessageBox.Show(Class15.dicCommon["WriteComplete"]);
-                        this.lblPrompt.Text = Settings.dicCommon["WriteComplete"];
+						this.lblPrompt.Text = Settings.dicCommon["WriteComplete"];
 					}
+					 */
                     this.btnOK.Visible = true;
                     this.btnCancel.Visible = false;
                      

@@ -315,7 +315,7 @@ namespace DMR
 		private void method_1()
 		{
 			this.txtName.MaxByteLength = 15;
-			this.txtName.KeyPress += Settings.smethod_54;
+			this.txtName.KeyPress += new KeyPressEventHandler(Settings.smethod_54);
 		}
 
 		private void RxGroupListForm_Load(object sender, EventArgs e)

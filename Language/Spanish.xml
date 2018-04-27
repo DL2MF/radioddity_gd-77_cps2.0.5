@@ -3,12 +3,13 @@
 	<Settings>
 		<Item Id="MaxZoneCount" Text="32" />
 	</Settings>
-	<Language Id="Eng" Text="Español" />
+	<Language Id="Esp" Text="Español" />
 	<AboutForm Text="Acerca de">
 		<Controls>
 			<Control Id="lblVersion" Text="v3.0.6" />
 			<Control Id="lblCompany" Text="GD-77 Community Español EA" />
 			<Control Id="btnClose" Text="OK" />
+      <Control Id="lblTranslationCredit" Text="Spanish version by EA4ALX" />
 		</Controls>
 	</AboutForm>
 	<BootItemForm Text="Elementos Inicio">
@@ -429,6 +430,9 @@
 			<MenuItem Id="tsmiEnglish" Text="Inglés" />
 			<MenuItem Id="tsmiChinese" Text="Español" />
       <MenuItem Id="tsmiExtras" Text="Extras" />
+      <MenuItem Id="tsmiContactsDownload" Text="Download contacts" />
+      <MenuItem Id="tsmiDMRID" Text="DMR ID" />
+      <MenuItem Id="tsmiCalibration" Text="Calibration viewer" />
     </MenuStrip>
 		<ContextMenuStrip>
 			<MenuItem Id="tsmiAdd" Text="Añadir" />
@@ -714,12 +718,13 @@
 			<Control Id="lblName" Text="Nombre" />
 		</Controls>
 	</ZoneForm>
-<DownloadContactsForm Text="Descargar Contactos desde 'Last Heard'">
+<DownloadContactsForm Text="Descargar Contactos">
     <Controls>
       <Control Id="lblMessage" Text="Introduzca prefijo de código ID de su region y pulse Descargar..." />
       <Control Id="btnImport" Text="Importar seleccionados" />
       <Control Id="btnSelectAll" Text="Seleccionar Todos" />
-      <Control Id="btnDownload" Text="Descargar Datos" />
+      <Control Id="btnDownload" Text="Descargar Datos URL" />
+      <Control Id="btnDownloadDMRMARC" Text="Descargar desde DRM MARC" />      
       <Control Id="lblIDStart" Text="Prefijo Regional" />
       <Control Id="txtIDStart" Text="505" />
       <Control Id="lblIDStartAlert" Text="Por favor, introduzca el código de prefijo de 3 digitos de su zona. Ej.: 214 España" />
@@ -776,6 +781,12 @@
     <Item Id="UnableDownloadFromInternet" Text="Imposible descargar los datos. Compruebe su conexión a Internet" />
     <Item Id="DownloadContactsImportComplete" Text="Import complete" />
     <Item Id="CodeplugUpgradeNotice" Text="This appears to be a V3.0.6 Codeplug. It will be converted to V3.1.x" />
-    <Item Id="CodeplugUpgradeWarningToManyRxGroups" Text="Version 3.1.x can only have 76 Rx Groups. Additional Rx Groups have been ignored" />    
+    <Item Id="CodeplugUpgradeWarningToManyRxGroups" Text="Version 3.1.x can only have 76 Rx Groups. Additional Rx Groups have been ignored" />
+    <Item Id="CodeplugRead" Text="Reading codeplug from GD-77" />
+    <Item Id="CodeplugWrite" Text="Writing codeplug to GD-77" />
+    <Item Id="DMRIDRead" Text="Reading DMR ID database from GD-77" />
+    <Item Id="DMRIDWrite" Text="Writing DMR ID database to GD-77" />
+    <Item Id="CalibrationRead" Text="Reading calibration data from GD-77" />
+    <Item Id="CalibrationWrite" Text="Writing calibration data to GD-77" />    
   </Commons>
 </Resource>

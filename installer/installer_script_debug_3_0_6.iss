@@ -19,7 +19,6 @@ AppSupportURL={#MyAppURL}
 AppUpdatesURL={#MyAppURL}
 DefaultDirName={pf}\RadioddityGD77CPS306CommunityEdition
 CreateAppDir=yes
-;DefaultDirName={sd}\RadioddityGD77CPS2.0.5CommunityEdition
 DisableProgramGroupPage=yes
 OutputDir=..\installer
 OutputBaseFilename=RadioddityGD77CPS306CommunityEditionInstaller
@@ -56,14 +55,22 @@ Source: "..\Setup.ini"; DestDir: "{app}";  Components: portable; Flags: ignoreve
 Source: "..\bin\Debug\Tone.txt"; DestDir: "{app}"; Flags: ignoreversion
 Source: "..\bin\Debug\WeifenLuo.WinFormsUI.Docking.dll"; DestDir: "{app}"; Flags: ignoreversion
 ;Source: "..\bin\Debug\Data\Default.dat"; DestDir: "{app}\Data"; Components: portable; Flags: ignoreversion
-Source: "..\bin\Debug\Language\English.chm"; DestDir: "{app}\Language"; Flags: ignoreversion
-Source: "..\bin\Debug\Language\English.xml"; DestDir: "{app}\Language"; Flags: ignoreversion
-Source: "..\bin\Debug\Language\German.xml"; DestDir: "{app}\Language"; Flags: ignoreversion
-Source: "..\bin\Debug\Language\German.chm"; DestDir: "{app}\Language"; Flags: ignoreversion
-Source: "..\bin\Debug\Language\Polski.xml"; DestDir: "{app}\Language"; Flags: ignoreversion
-Source: "..\bin\Debug\Language\Polski.chm"; DestDir: "{app}\Language"; Flags: ignoreversion
-Source: "..\bin\Debug\Language\Spanish.xml"; DestDir: "{app}\Language"; Flags: ignoreversion
-Source: "..\bin\Debug\Language\Spanish.chm"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\English.chm"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\English.xml"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\French.chm"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\French.xml"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\German.xml"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\German.chm"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\Polski.xml"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\Polski.chm"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\Portuguese.xml"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\Portuguese.chm"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\Slovenian.xml"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\Slovenian.chm"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\Spanish.xml"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\Spanish.chm"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\Ukrainian.xml"; DestDir: "{app}\Language"; Flags: ignoreversion
+Source: "..\Language\Ukrainian.chm"; DestDir: "{app}\Language"; Flags: ignoreversion
 ; NOTE: Don't use "Flags: ignoreversion" on any shared system files
 
 [Icons]

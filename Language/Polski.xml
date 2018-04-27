@@ -3,12 +3,13 @@
 	<Settings>
 		<Item Id="MaxZoneCount" Text="32" />
 	</Settings>
-	<Language Id="Eng" Text="Polski" />
+	<Language Id="Pol" Text="Polski" />
 	<AboutForm Text="O programie">
 		<Controls>
 			<Control Id="lblVersion" Text="v3.0.6" />
 			<Control Id="lblCompany" Text="Radioddity and GD-77 Community" />
 			<Control Id="btnClose" Text="OK" />
+      <Control Id="lblTranslationCredit" Text="Polish version by Rysiek - SQ9MDD" />
 		</Controls>
 	</AboutForm>
 	<BootItemForm Text="Ekran Logowania">
@@ -429,6 +430,9 @@
 			<MenuItem Id="tsmiEnglish" Text="Angielski" />
 			<MenuItem Id="tsmiChinese" Text="Chiński" />
       <MenuItem Id="tsmiExtras" Text="Extras" />
+      <MenuItem Id="tsmiContactsDownload" Text="Download contacts" />
+      <MenuItem Id="tsmiDMRID" Text="DMR ID" />
+      <MenuItem Id="tsmiCalibration" Text="Calibration viewer" />
     </MenuStrip>
 		<ContextMenuStrip>
 			<MenuItem Id="tsmiAdd" Text="Dodaj" />
@@ -714,12 +718,13 @@
 			<Control Id="lblName" Text="Nazwa" />
 		</Controls>
 	</ZoneForm>
-  <DownloadContactsForm Text="Download contacts from 'Last Heard'">
+  <DownloadContactsForm Text="Download contacts">
     <Controls>
       <Control Id="lblMessage" Text="Enter the ID prefix code for your region and press Download..." />
       <Control Id="btnImport" Text="Import selected" />
       <Control Id="btnSelectAll" Text="Select all" />
-      <Control Id="btnDownload" Text="Download 'Last Heard' data" />
+      <Control Id="btnDownload" Text="Download from URL" />
+      <Control Id="btnDownloadDMRMARC" Text="Download from DRM MARC" />
       <Control Id="lblIDStart" Text="Region Prefix code" />
       <Control Id="lblMessageDownloading" Text="Downloading" />
       <Control Id="dgvDownloadeContacts" Text="ID,Callsign,Name,Last heard">
@@ -729,8 +734,8 @@
         <ControlItem Id="" Text="Last heard" />
       </Control>
     </Controls>
-  </DownloadContactsForm>  
-	<Commons>
+  </DownloadContactsForm>
+  <Commons>
 		<Item Id="None" Text="None" />
 		<Item Id="Selected" Text="Selected" />
 		<Item Id="RadioIdNotEmpty" Text="ID radia nie może być puste!" />
@@ -772,6 +777,12 @@
     <Item Id="UnableDownloadFromInternet" Text="Unable to download data. Please check your Internet connection" />
     <Item Id="DownloadContactsImportComplete" Text="Import complete" />
     <Item Id="CodeplugUpgradeNotice" Text="This appears to be a V3.0.6 Codeplug. It will be converted to V3.1.x" />
-    <Item Id="CodeplugUpgradeWarningToManyRxGroups" Text="Version 3.1.x can only have 76 Rx Groups. Additional Rx Groups have been ignored" />    
+    <Item Id="CodeplugUpgradeWarningToManyRxGroups" Text="Version 3.1.x can only have 76 Rx Groups. Additional Rx Groups have been ignored" />
+    <Item Id="CodeplugRead" Text="Reading codeplug from GD-77" />
+    <Item Id="CodeplugWrite" Text="Writing codeplug to GD-77" />
+    <Item Id="DMRIDRead" Text="Reading DMR ID database from GD-77" />
+    <Item Id="DMRIDWrite" Text="Writing DMR ID database to GD-77" />
+    <Item Id="CalibrationRead" Text="Reading calibration data from GD-77" />
+    <Item Id="CalibrationWrite" Text="Writing calibration data to GD-77" />    
   </Commons>
 </Resource>
