@@ -50,7 +50,7 @@ namespace DMR
 			Close();
 		}
 
-		private void btnCancel_Click(object sender, EventArgs e)
+		private void btnClose_Click(object sender, EventArgs e)
 		{
 			this.DialogResult = DialogResult.Cancel;
 			Close();
@@ -79,10 +79,13 @@ namespace DMR
 
 		private void onFormShown(object sender, EventArgs e)
 		{
+			MessageBox.Show("This feature is still in development. It currently only allows the calibration data to be viewed");
+			/*
 			if (DialogResult.Yes != MessageBox.Show("This feature is provided 'as is'. You use it at your own risk.\n\nMaking changes to the flash memory in the Radioddity GD-77 or any other compatible radio, using this feature, could potentially damage your radio.\n\nBy clicking 'Yes' you acknowledge that you use this software entirely at your own risk", "WARNING", MessageBoxButtons.YesNo, MessageBoxIcon.Hand, MessageBoxDefaultButton.Button2))
 			{
 				this.Close();
 			}
+			*/
 		}
 	}
 }

@@ -118,7 +118,7 @@ namespace DMR
 			this.btnInternetDownload.TabIndex = 12;
 			this.btnInternetDownload.Text = "Internet Download";
 			this.btnInternetDownload.UseVisualStyleBackColor = true;
-			this.btnInternetDownload.Click += new System.EventHandler(this.btnDownload_Click);
+			this.btnInternetDownload.Click += new EventHandler(this.btnDownload_Click);
 			// 
 			// btnImport
 			// 
@@ -128,7 +128,7 @@ namespace DMR
 			this.btnImport.TabIndex = 11;
 			this.btnImport.Text = "Import";
 			this.btnImport.UseVisualStyleBackColor = true;
-			this.btnImport.Click += new System.EventHandler(this.btnImport_Click);
+			this.btnImport.Click += new EventHandler(this.btnImport_Click);
 			// 
 			// btnExport
 			// 
@@ -138,7 +138,7 @@ namespace DMR
 			this.btnExport.TabIndex = 11;
 			this.btnExport.Text = "Export";
 			this.btnExport.UseVisualStyleBackColor = true;
-			this.btnExport.Click += new System.EventHandler(this.btnExport_Click);
+			this.btnExport.Click += new EventHandler(this.btnExport_Click);
 			// 
 			// btnDeleteSelect
 			// 
@@ -149,7 +149,7 @@ namespace DMR
 			this.btnDeleteSelect.Text = "Delete Select";
 			this.btnDeleteSelect.UseVisualStyleBackColor = true;
 			this.btnDeleteSelect.Visible = false;
-			this.btnDeleteSelect.Click += new System.EventHandler(this.btnDeleteSelect_Click);
+			this.btnDeleteSelect.Click += new EventHandler(this.btnDeleteSelect_Click);
 			// 
 			// txtCallId
 			// 
@@ -221,7 +221,7 @@ namespace DMR
 			this.btnClear.TabIndex = 3;
 			this.btnClear.Text = "Clear";
 			this.btnClear.UseVisualStyleBackColor = true;
-			this.btnClear.Click += new System.EventHandler(this.btnClear_Click);
+			this.btnClear.Click += new EventHandler(this.btnClear_Click);
 			// 
 			// btnDelete
 			// 
@@ -231,7 +231,7 @@ namespace DMR
 			this.btnDelete.TabIndex = 2;
 			this.btnDelete.Text = "Delete";
 			this.btnDelete.UseVisualStyleBackColor = true;
-			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
+			this.btnDelete.Click += new EventHandler(this.btnDelete_Click);
 			// 
 			// btnAdd
 			// 
@@ -241,7 +241,7 @@ namespace DMR
 			this.btnAdd.TabIndex = 1;
 			this.btnAdd.Text = "Add";
 			this.btnAdd.UseVisualStyleBackColor = true;
-			this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+			this.btnAdd.Click += new EventHandler(this.btnAdd_Click);
 			// 
 			// dgvContacts
 			// 
@@ -253,9 +253,9 @@ namespace DMR
 			this.dgvContacts.RowTemplate.Height = 23;
 			this.dgvContacts.Size = new System.Drawing.Size(750, 292);
 			this.dgvContacts.TabIndex = 9;
-			this.dgvContacts.RowHeaderMouseDoubleClick += new System.Windows.Forms.DataGridViewCellMouseEventHandler(this.dgvContacts_RowHeaderMouseDoubleClick);
-			this.dgvContacts.RowPostPaint += new System.Windows.Forms.DataGridViewRowPostPaintEventHandler(this.dgvContacts_RowPostPaint);
-			this.dgvContacts.SelectionChanged += new System.EventHandler(this.dgvContacts_SelectionChanged);
+			this.dgvContacts.RowHeaderMouseDoubleClick += new DataGridViewCellMouseEventHandler(this.dgvContacts_RowHeaderMouseDoubleClick);
+			this.dgvContacts.RowPostPaint += new DataGridViewRowPostPaintEventHandler(this.dgvContacts_RowPostPaint);
+			this.dgvContacts.SelectionChanged += new EventHandler(this.dgvContacts_SelectionChanged);
 			// 
 			// dataGridViewTextBoxColumn1
 			// 
@@ -358,7 +358,7 @@ namespace DMR
 
 		public ContactsForm()
 		{
-			this.Load += this.ContactsForm_Load;
+			this.Load += new EventHandler(this.ContactsForm_Load);
 			this.InitializeComponent();
 			base.Scale(Settings.smethod_6());
 		}
@@ -579,6 +579,9 @@ namespace DMR
 				100
 			};
 			this.dgvContacts.ReadOnly = true;
+			this.dgvContacts.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left)));			
+			
 			this.dgvContacts.ColumnHeadersDefaultCellStyle.Alignment = DataGridViewContentAlignment.MiddleCenter;
 			this.dgvContacts.AllowUserToAddRows = false;
 			this.dgvContacts.AllowUserToDeleteRows = false;
@@ -837,7 +840,15 @@ namespace DMR
 			DownloadContactsForm dlc = new DownloadContactsForm();
 			dlc.parentForm = this;
 			dlc.mainForm = this.MdiParent as MainForm;
-			dlc.ShowDialog();
+			try
+			{
+				dlc.ShowDialog();
+			}
+			catch (Exception)
+			{
+				MessageBox.Show(Settings.dicCommon["UnableDownloadFromInternet"]);
+				return;
+			}
 		}
 	}
 }

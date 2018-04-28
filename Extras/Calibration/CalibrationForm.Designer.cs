@@ -37,7 +37,7 @@ namespace DMR
 			this.tabUHF = new System.Windows.Forms.TabPage();
 			this.calibrationBandControlUHF = new DMR.CalibrationBandControl();
 			this.btnWrite = new System.Windows.Forms.Button();
-			this.btnCancel = new System.Windows.Forms.Button();
+			this.btnClose = new System.Windows.Forms.Button();
 			this.tabCtlBands.SuspendLayout();
 			this.tabVHF.SuspendLayout();
 			this.tabUHF.SuspendLayout();
@@ -99,28 +99,29 @@ namespace DMR
 			this.btnWrite.TabIndex = 1;
 			this.btnWrite.Text = "Write to GD-77";
 			this.btnWrite.UseVisualStyleBackColor = true;
+			this.btnWrite.Visible = false;
 			this.btnWrite.Click += new System.EventHandler(this.btnWrite_Click);
 			// 
-			// btnCancel
+			// btnClose
 			// 
-			this.btnCancel.Location = new System.Drawing.Point(854, 561);
-			this.btnCancel.Name = "btnCancel";
-			this.btnCancel.Size = new System.Drawing.Size(75, 23);
-			this.btnCancel.TabIndex = 1;
-			this.btnCancel.Text = "Cancel";
-			this.btnCancel.UseVisualStyleBackColor = true;
-			this.btnCancel.Click += new System.EventHandler(this.btnCancel_Click);
+			this.btnClose.Location = new System.Drawing.Point(854, 561);
+			this.btnClose.Name = "btnClose";
+			this.btnClose.Size = new System.Drawing.Size(75, 23);
+			this.btnClose.TabIndex = 1;
+			this.btnClose.Text = "Close";
+			this.btnClose.UseVisualStyleBackColor = true;
+			this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
 			// 
 			// CalibrationForm
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.ClientSize = new System.Drawing.Size(945, 596);
-			this.Controls.Add(this.btnCancel);
+			this.Controls.Add(this.btnClose);
 			this.Controls.Add(this.btnWrite);
 			this.Controls.Add(this.tabCtlBands);
 			this.Name = "CalibrationForm";
-			this.Text = "Calibration";
+			this.Text = "Calibration Viewer";
 			this.Shown += new System.EventHandler(this.onFormShown);
 			this.tabCtlBands.ResumeLayout(false);
 			this.tabVHF.ResumeLayout(false);
@@ -135,7 +136,7 @@ namespace DMR
 		private System.Windows.Forms.TabPage tabVHF;
 		private System.Windows.Forms.TabPage tabUHF;
 		private System.Windows.Forms.Button btnWrite;
-		private System.Windows.Forms.Button btnCancel;
+		private System.Windows.Forms.Button btnClose;
 		private CalibrationBandControl calibrationBandControlUHF;
 		private CalibrationBandControl calibrationBandControlVHF;
 	}

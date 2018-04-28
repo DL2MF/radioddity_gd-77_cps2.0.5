@@ -70,13 +70,10 @@
 			this.lblToneBurst = new System.Windows.Forms.Label();
 			this.nudAnalogTxDeviationDTMF = new System.Windows.Forms.NumericUpDown();
 			this.lblDTMF = new System.Windows.Forms.Label();
-			this.grpDigitalGain = new System.Windows.Forms.GroupBox();
-			this.nudDigitalTxGainNarrowband = new System.Windows.Forms.NumericUpDown();
-			this.nudDigitalTxGainWideband = new System.Windows.Forms.NumericUpDown();
+			this.grpIFGain = new System.Windows.Forms.GroupBox();
 			this.lblDigitalGainNarrow = new System.Windows.Forms.Label();
 			this.lblDigitalGainWide = new System.Windows.Forms.Label();
 			this.nudDigitalRxGainNarrowband = new System.Windows.Forms.NumericUpDown();
-			this.lblDigitalGainTx = new System.Windows.Forms.Label();
 			this.nudDigitalRxGainWideband = new System.Windows.Forms.NumericUpDown();
 			this.lblDigitalGainRx = new System.Windows.Forms.Label();
 			this.grpAnalogGain = new System.Windows.Forms.GroupBox();
@@ -85,9 +82,9 @@
 			this.nudAnalogRxGainNarrowband = new System.Windows.Forms.NumericUpDown();
 			this.nudAnalogRxGainWideband = new System.Windows.Forms.NumericUpDown();
 			this.lblAnalogAudioGainRx = new System.Windows.Forms.Label();
-			this.calibrationTXIandQ = new DMR.CalibrationPowerControl();
-			this.calibrationPowerControlLow = new DMR.CalibrationPowerControl();
-			this.calibrationPowerControlHigh = new DMR.CalibrationPowerControl();
+			this.calibrationTXIandQ = new CalibrationPowerControl();
+			this.calibrationPowerControlLow = new CalibrationPowerControl();
+			this.calibrationPowerControlHigh = new CalibrationPowerControl();
 			this.grpSquelch.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudSquelchNarrowTightClose)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudSquelchWideTightClose)).BeginInit();
@@ -112,9 +109,7 @@
 			((System.ComponentModel.ISupportInitialize)(this.nudAnalogTxDeviationCTCSSWideband)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudAnalogTxDeviation1750Tone)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudAnalogTxDeviationDTMF)).BeginInit();
-			this.grpDigitalGain.SuspendLayout();
-			((System.ComponentModel.ISupportInitialize)(this.nudDigitalTxGainNarrowband)).BeginInit();
-			((System.ComponentModel.ISupportInitialize)(this.nudDigitalTxGainWideband)).BeginInit();
+			this.grpIFGain.SuspendLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudDigitalRxGainNarrowband)).BeginInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudDigitalRxGainWideband)).BeginInit();
 			this.grpAnalogGain.SuspendLayout();
@@ -297,7 +292,7 @@
 			// 
 			// nudVhfOscRef
 			// 
-			this.nudVhfOscRef.Location = new System.Drawing.Point(726, 366);
+			this.nudVhfOscRef.Location = new System.Drawing.Point(712, 322);
 			this.nudVhfOscRef.Maximum = new decimal(new int[] {
             65535,
             0,
@@ -310,7 +305,7 @@
 			// lblReferenceOscTuning
 			// 
 			this.lblReferenceOscTuning.AutoSize = true;
-			this.lblReferenceOscTuning.Location = new System.Drawing.Point(587, 366);
+			this.lblReferenceOscTuning.Location = new System.Drawing.Point(573, 322);
 			this.lblReferenceOscTuning.Name = "lblReferenceOscTuning";
 			this.lblReferenceOscTuning.Size = new System.Drawing.Size(133, 13);
 			this.lblReferenceOscTuning.TabIndex = 6;
@@ -319,7 +314,7 @@
 			// lblReceiveAGCTarget
 			// 
 			this.lblReceiveAGCTarget.AutoSize = true;
-			this.lblReceiveAGCTarget.Location = new System.Drawing.Point(606, 398);
+			this.lblReceiveAGCTarget.Location = new System.Drawing.Point(592, 354);
 			this.lblReceiveAGCTarget.Name = "lblReceiveAGCTarget";
 			this.lblReceiveAGCTarget.Size = new System.Drawing.Size(102, 13);
 			this.lblReceiveAGCTarget.TabIndex = 6;
@@ -327,7 +322,7 @@
 			// 
 			// nudReceiveAGCTarget
 			// 
-			this.nudReceiveAGCTarget.Location = new System.Drawing.Point(725, 396);
+			this.nudReceiveAGCTarget.Location = new System.Drawing.Point(711, 352);
 			this.nudReceiveAGCTarget.Maximum = new decimal(new int[] {
             255,
             0,
@@ -340,7 +335,7 @@
 			// lblAnalogMicGain
 			// 
 			this.lblAnalogMicGain.AutoSize = true;
-			this.lblAnalogMicGain.Location = new System.Drawing.Point(606, 428);
+			this.lblAnalogMicGain.Location = new System.Drawing.Point(11, 67);
 			this.lblAnalogMicGain.Name = "lblAnalogMicGain";
 			this.lblAnalogMicGain.Size = new System.Drawing.Size(82, 13);
 			this.lblAnalogMicGain.TabIndex = 6;
@@ -348,7 +343,7 @@
 			// 
 			// nudAnalogMicGain
 			// 
-			this.nudAnalogMicGain.Location = new System.Drawing.Point(725, 426);
+			this.nudAnalogMicGain.Location = new System.Drawing.Point(130, 65);
 			this.nudAnalogMicGain.Maximum = new decimal(new int[] {
             255,
             0,
@@ -364,7 +359,7 @@
 			this.grpSMeter.Controls.Add(this.nudSMeterLow);
 			this.grpSMeter.Controls.Add(this.lblSMeterLowEnd);
 			this.grpSMeter.Controls.Add(this.lblSMeterHighEnd);
-			this.grpSMeter.Location = new System.Drawing.Point(444, 375);
+			this.grpSMeter.Location = new System.Drawing.Point(437, 324);
 			this.grpSMeter.Name = "grpSMeter";
 			this.grpSMeter.Size = new System.Drawing.Size(117, 87);
 			this.grpSMeter.TabIndex = 10;
@@ -430,7 +425,6 @@
 			this.grpAnalogTxDeviation.Controls.Add(this.lblToneBurst);
 			this.grpAnalogTxDeviation.Controls.Add(this.nudAnalogTxDeviationDTMF);
 			this.grpAnalogTxDeviation.Controls.Add(this.lblDTMF);
-			this.grpAnalogTxDeviation.Enabled = false;
 			this.grpAnalogTxDeviation.Location = new System.Drawing.Point(432, 183);
 			this.grpAnalogTxDeviation.Name = "grpAnalogTxDeviation";
 			this.grpAnalogTxDeviation.Size = new System.Drawing.Size(342, 130);
@@ -597,65 +591,37 @@
 			this.lblDTMF.TabIndex = 1;
 			this.lblDTMF.Text = "DTMF";
 			// 
-			// grpDigitalGain
+			// grpIFGain
 			// 
-			this.grpDigitalGain.Controls.Add(this.nudDigitalTxGainNarrowband);
-			this.grpDigitalGain.Controls.Add(this.nudDigitalTxGainWideband);
-			this.grpDigitalGain.Controls.Add(this.lblDigitalGainNarrow);
-			this.grpDigitalGain.Controls.Add(this.lblDigitalGainWide);
-			this.grpDigitalGain.Controls.Add(this.nudDigitalRxGainNarrowband);
-			this.grpDigitalGain.Controls.Add(this.lblDigitalGainTx);
-			this.grpDigitalGain.Controls.Add(this.nudDigitalRxGainWideband);
-			this.grpDigitalGain.Controls.Add(this.lblDigitalGainRx);
-			this.grpDigitalGain.Enabled = false;
-			this.grpDigitalGain.Location = new System.Drawing.Point(211, 274);
-			this.grpDigitalGain.Name = "grpDigitalGain";
-			this.grpDigitalGain.Size = new System.Drawing.Size(215, 102);
-			this.grpDigitalGain.TabIndex = 12;
-			this.grpDigitalGain.TabStop = false;
-			this.grpDigitalGain.Text = "Digital gain";
-			// 
-			// nudDigitalTxGainNarrowband
-			// 
-			this.nudDigitalTxGainNarrowband.Location = new System.Drawing.Point(139, 71);
-			this.nudDigitalTxGainNarrowband.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-			this.nudDigitalTxGainNarrowband.Name = "nudDigitalTxGainNarrowband";
-			this.nudDigitalTxGainNarrowband.Size = new System.Drawing.Size(65, 20);
-			this.nudDigitalTxGainNarrowband.TabIndex = 7;
-			// 
-			// nudDigitalTxGainWideband
-			// 
-			this.nudDigitalTxGainWideband.Location = new System.Drawing.Point(52, 71);
-			this.nudDigitalTxGainWideband.Maximum = new decimal(new int[] {
-            65535,
-            0,
-            0,
-            0});
-			this.nudDigitalTxGainWideband.Name = "nudDigitalTxGainWideband";
-			this.nudDigitalTxGainWideband.Size = new System.Drawing.Size(65, 20);
-			this.nudDigitalTxGainWideband.TabIndex = 8;
+			this.grpIFGain.Controls.Add(this.lblDigitalGainNarrow);
+			this.grpIFGain.Controls.Add(this.lblDigitalGainWide);
+			this.grpIFGain.Controls.Add(this.nudDigitalRxGainNarrowband);
+			this.grpIFGain.Controls.Add(this.nudDigitalRxGainWideband);
+			this.grpIFGain.Controls.Add(this.lblDigitalGainRx);
+			this.grpIFGain.Location = new System.Drawing.Point(211, 274);
+			this.grpIFGain.Name = "grpIFGain";
+			this.grpIFGain.Size = new System.Drawing.Size(215, 77);
+			this.grpIFGain.TabIndex = 12;
+			this.grpIFGain.TabStop = false;
+			this.grpIFGain.Text = "IF gain";
 			// 
 			// lblDigitalGainNarrow
 			// 
 			this.lblDigitalGainNarrow.AutoSize = true;
 			this.lblDigitalGainNarrow.Location = new System.Drawing.Point(147, 26);
 			this.lblDigitalGainNarrow.Name = "lblDigitalGainNarrow";
-			this.lblDigitalGainNarrow.Size = new System.Drawing.Size(41, 13);
+			this.lblDigitalGainNarrow.Size = new System.Drawing.Size(27, 13);
 			this.lblDigitalGainNarrow.TabIndex = 6;
-			this.lblDigitalGainNarrow.Text = "Narrow";
+			this.lblDigitalGainNarrow.Text = "Fine";
 			// 
 			// lblDigitalGainWide
 			// 
 			this.lblDigitalGainWide.AutoSize = true;
 			this.lblDigitalGainWide.Location = new System.Drawing.Point(60, 27);
 			this.lblDigitalGainWide.Name = "lblDigitalGainWide";
-			this.lblDigitalGainWide.Size = new System.Drawing.Size(32, 13);
+			this.lblDigitalGainWide.Size = new System.Drawing.Size(40, 13);
 			this.lblDigitalGainWide.TabIndex = 5;
-			this.lblDigitalGainWide.Text = "Wide";
+			this.lblDigitalGainWide.Text = "Course";
 			// 
 			// nudDigitalRxGainNarrowband
 			// 
@@ -668,15 +634,6 @@
 			this.nudDigitalRxGainNarrowband.Name = "nudDigitalRxGainNarrowband";
 			this.nudDigitalRxGainNarrowband.Size = new System.Drawing.Size(65, 20);
 			this.nudDigitalRxGainNarrowband.TabIndex = 1;
-			// 
-			// lblDigitalGainTx
-			// 
-			this.lblDigitalGainTx.AutoSize = true;
-			this.lblDigitalGainTx.Location = new System.Drawing.Point(7, 74);
-			this.lblDigitalGainTx.Name = "lblDigitalGainTx";
-			this.lblDigitalGainTx.Size = new System.Drawing.Size(19, 13);
-			this.lblDigitalGainTx.TabIndex = 0;
-			this.lblDigitalGainTx.Text = "Tx";
 			// 
 			// nudDigitalRxGainWideband
 			// 
@@ -706,31 +663,32 @@
 			this.grpAnalogGain.Controls.Add(this.nudAnalogRxGainNarrowband);
 			this.grpAnalogGain.Controls.Add(this.nudAnalogRxGainWideband);
 			this.grpAnalogGain.Controls.Add(this.lblAnalogAudioGainRx);
-			this.grpAnalogGain.Enabled = false;
-			this.grpAnalogGain.Location = new System.Drawing.Point(211, 382);
+			this.grpAnalogGain.Controls.Add(this.lblAnalogMicGain);
+			this.grpAnalogGain.Controls.Add(this.nudAnalogMicGain);
+			this.grpAnalogGain.Location = new System.Drawing.Point(211, 359);
 			this.grpAnalogGain.Name = "grpAnalogGain";
-			this.grpAnalogGain.Size = new System.Drawing.Size(215, 80);
+			this.grpAnalogGain.Size = new System.Drawing.Size(215, 96);
 			this.grpAnalogGain.TabIndex = 13;
 			this.grpAnalogGain.TabStop = false;
-			this.grpAnalogGain.Text = "Analog audio gain";
+			this.grpAnalogGain.Text = "Audio gain";
 			// 
 			// lblAnalogAudioGainNarrow
 			// 
 			this.lblAnalogAudioGainNarrow.AutoSize = true;
 			this.lblAnalogAudioGainNarrow.Location = new System.Drawing.Point(138, 22);
 			this.lblAnalogAudioGainNarrow.Name = "lblAnalogAudioGainNarrow";
-			this.lblAnalogAudioGainNarrow.Size = new System.Drawing.Size(41, 13);
+			this.lblAnalogAudioGainNarrow.Size = new System.Drawing.Size(27, 13);
 			this.lblAnalogAudioGainNarrow.TabIndex = 10;
-			this.lblAnalogAudioGainNarrow.Text = "Narrow";
+			this.lblAnalogAudioGainNarrow.Text = "Fine";
 			// 
 			// lblAnalogAudioGainWide
 			// 
 			this.lblAnalogAudioGainWide.AutoSize = true;
 			this.lblAnalogAudioGainWide.Location = new System.Drawing.Point(53, 22);
 			this.lblAnalogAudioGainWide.Name = "lblAnalogAudioGainWide";
-			this.lblAnalogAudioGainWide.Size = new System.Drawing.Size(32, 13);
+			this.lblAnalogAudioGainWide.Size = new System.Drawing.Size(40, 13);
 			this.lblAnalogAudioGainWide.TabIndex = 9;
-			this.lblAnalogAudioGainWide.Text = "Wide";
+			this.lblAnalogAudioGainWide.Text = "Course";
 			// 
 			// nudAnalogRxGainNarrowband
 			// 
@@ -769,7 +727,6 @@
 			// 
 			this.calibrationTXIandQ.Cols = 8;
 			this.calibrationTXIandQ.CtrlText = "Tx I && Q";
-			this.calibrationTXIandQ.Enabled = false;
 			this.calibrationTXIandQ.Location = new System.Drawing.Point(8, 178);
 			this.calibrationTXIandQ.Name = "calibrationTXIandQ";
 			this.calibrationTXIandQ.Names = new string[] {
@@ -890,15 +847,13 @@
 			this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.Controls.Add(this.grpAnalogGain);
-			this.Controls.Add(this.grpDigitalGain);
+			this.Controls.Add(this.grpIFGain);
 			this.Controls.Add(this.grpAnalogTxDeviation);
 			this.Controls.Add(this.grpSMeter);
 			this.Controls.Add(this.calibrationTXIandQ);
 			this.Controls.Add(this.calibrationPowerControlLow);
 			this.Controls.Add(this.calibrationPowerControlHigh);
 			this.Controls.Add(this.grpSquelch);
-			this.Controls.Add(this.nudAnalogMicGain);
-			this.Controls.Add(this.lblAnalogMicGain);
 			this.Controls.Add(this.nudReceiveAGCTarget);
 			this.Controls.Add(this.lblReceiveAGCTarget);
 			this.Controls.Add(this.nudVhfOscRef);
@@ -932,10 +887,8 @@
 			((System.ComponentModel.ISupportInitialize)(this.nudAnalogTxDeviationCTCSSWideband)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudAnalogTxDeviation1750Tone)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudAnalogTxDeviationDTMF)).EndInit();
-			this.grpDigitalGain.ResumeLayout(false);
-			this.grpDigitalGain.PerformLayout();
-			((System.ComponentModel.ISupportInitialize)(this.nudDigitalTxGainNarrowband)).EndInit();
-			((System.ComponentModel.ISupportInitialize)(this.nudDigitalTxGainWideband)).EndInit();
+			this.grpIFGain.ResumeLayout(false);
+			this.grpIFGain.PerformLayout();
 			((System.ComponentModel.ISupportInitialize)(this.nudDigitalRxGainNarrowband)).EndInit();
 			((System.ComponentModel.ISupportInitialize)(this.nudDigitalRxGainWideband)).EndInit();
 			this.grpAnalogGain.ResumeLayout(false);
@@ -979,15 +932,12 @@
 		private System.Windows.Forms.Label lblSMeterLowEnd;
 		private System.Windows.Forms.Label lblSMeterHighEnd;
 		private System.Windows.Forms.GroupBox grpAnalogTxDeviation;
-		private System.Windows.Forms.GroupBox grpDigitalGain;
+		private System.Windows.Forms.GroupBox grpIFGain;
 		private System.Windows.Forms.Label lblDigitalGainNarrow;
 		private System.Windows.Forms.Label lblDigitalGainWide;
 		private System.Windows.Forms.NumericUpDown nudDigitalRxGainNarrowband;
-		private System.Windows.Forms.Label lblDigitalGainTx;
 		private System.Windows.Forms.NumericUpDown nudDigitalRxGainWideband;
 		private System.Windows.Forms.Label lblDigitalGainRx;
-		private System.Windows.Forms.NumericUpDown nudDigitalTxGainNarrowband;
-		private System.Windows.Forms.NumericUpDown nudDigitalTxGainWideband;
 		private System.Windows.Forms.NumericUpDown nudAnalogTxDeviationDCSNarrowband;
 		private System.Windows.Forms.Label lblCTCSS;
 		private System.Windows.Forms.NumericUpDown nudlAnalogTxDeviationDCSWideband;

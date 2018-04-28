@@ -78,6 +78,7 @@
     <Reference Include="System.Core">
       <HintPath>C:\Windows\assembly\GAC_MSIL\System.Core\3.5.0.0__b77a5c561934e089\System.Core.dll</HintPath>
     </Reference>
+    <Reference Include="System.Web.Extensions" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.XML" />
     <Reference Include="WeifenLuo.WinFormsUI.Docking, Version=3.0.4.0, Culture=neutral, PublicKeyToken=5cded1a1a0a7b481, processorArchitecture=MSIL">
@@ -89,10 +90,11 @@
     <Compile Include="Class16.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DMR\DownloadContactsForm.cs">
+    <Compile Include="Extras\DownloadContacts\DmrMarcData.cs" />
+    <Compile Include="Extras\DownloadContacts\DownloadContactsForm.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DMR\DownloadContactsForm.Designer.cs">
+    <Compile Include="Extras\DownloadContacts\DownloadContactsForm.Designer.cs">
       <DependentUpon>DownloadContactsForm.cs</DependentUpon>
     </Compile>
     <Compile Include="DMR\DMRIDForm.cs">
@@ -106,28 +108,28 @@
     <Compile Include="Extras\Calibration\CalibrationBandControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Extras\Calibration\CalibrationBandControl.Designer.cs" >
+    <Compile Include="Extras\Calibration\CalibrationBandControl.Designer.cs">
       <DependentUpon>CalibrationBandControl.cs</DependentUpon>
-    </Compile>    
-	<Compile Include="Extras\Calibration\CalibrationData.cs" />
+    </Compile>
+    <Compile Include="Extras\Calibration\CalibrationData.cs" />
     <Compile Include="Extras\Calibration\CalibrationForm.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Extras\Calibration\CalibrationForm.Designer.cs">
-	      <DependentUpon>CalibrationForm.cs</DependentUpon>
+      <DependentUpon>CalibrationForm.cs</DependentUpon>
     </Compile>
     <Compile Include="Extras\Calibration\CalibrationNUDLabelControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Extras\Calibration\CalibrationNUDLabelControl.Designer.cs" >
+    <Compile Include="Extras\Calibration\CalibrationNUDLabelControl.Designer.cs">
       <DependentUpon>CalibrationNUDLabelControl.cs</DependentUpon>
-    </Compile>    
-	<Compile Include="Extras\Calibration\MultiNUDControl.cs">
+    </Compile>
+    <Compile Include="Extras\Calibration\MultiNUDControl.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="Extras\Calibration\MultiNUDControl.Designer.cs" >
+    <Compile Include="Extras\Calibration\MultiNUDControl.Designer.cs">
       <DependentUpon>MultiNUDControl.cs</DependentUpon>
-    </Compile>	
+    </Compile>
     <Compile Include="Extras\Calibration\PowerSettingData.cs" />
     <Compile Include="MainWindow.cs">
       <SubType>Code</SubType>
@@ -319,6 +321,9 @@
     <None Include="Language\Polski.chm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
+    <None Include="Language\Slovenian.chm">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
     <None Include="Language\Spanish.chm">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </None>
@@ -346,7 +351,7 @@
     <EmbeddedResource Include="DMR\DtmfForm.resx" />
     <EmbeddedResource Include="DMR\EmergencyForm.resx" />
     <EmbeddedResource Include="DMR\EncryptForm.resx" />
-    <EmbeddedResource Include="DMR\DownloadContactsForm.resx">
+    <EmbeddedResource Include="Extras\DownloadContacts\DownloadContactsForm.resx">
       <DependentUpon>DownloadContactsForm.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="DMR\g.resx" />
@@ -371,18 +376,18 @@
     <EmbeddedResource Include="DMR\WaitForm.resx" />
     <EmbeddedResource Include="DMR\ZoneBasicForm.resx" />
     <EmbeddedResource Include="DMR\ZoneForm.resx" />
-    <EmbeddedResource Include="Extras\Calibration\CalibrationBandControl.resx" >
-	      <DependentUpon>CalibrationBandControl.cs</DependentUpon>
+    <EmbeddedResource Include="Extras\Calibration\CalibrationBandControl.resx">
+      <DependentUpon>CalibrationBandControl.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Extras\Calibration\CalibrationForm.resx" >
+    <EmbeddedResource Include="Extras\Calibration\CalibrationForm.resx">
       <DependentUpon>CalibrationForm.cs</DependentUpon>
-    </EmbeddedResource>	
-    <EmbeddedResource Include="Extras\Calibration\CalibrationNUDLabelControl.resx" >
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extras\Calibration\CalibrationNUDLabelControl.resx">
       <DependentUpon>CalibrationNUDLabelControl.cs</DependentUpon>
-    </EmbeddedResource>	
-    <EmbeddedResource Include="Extras\Calibration\MultiNUDControl.resx" >
+    </EmbeddedResource>
+    <EmbeddedResource Include="Extras\Calibration\MultiNUDControl.resx">
       <DependentUpon>MultiNUDControl.cs</DependentUpon>
-    </EmbeddedResource>	
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
     <Content Include="help.xml">
@@ -399,6 +404,9 @@
     <Content Include="Language\Polski.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
       <SubType>Designer</SubType>
+    </Content>
+    <Content Include="Language\Slovenian.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Language\Spanish.xml">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>

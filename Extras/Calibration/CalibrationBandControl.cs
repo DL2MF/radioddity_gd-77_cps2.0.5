@@ -89,8 +89,8 @@ namespace DMR
 				_calibrationData.AnalogTxDeviationCTCSSNarrowband		= (byte)this.nudAnalogTxDeviationCTCSSNarrowband.Value;
 				_calibrationData.AnalogTxDeviationDCSWideband			= (byte)this.nudlAnalogTxDeviationDCSWideband.Value;
 				_calibrationData.AnalogTxDeviationDCSNarrowband			= (byte)this.nudAnalogTxDeviationDCSNarrowband.Value;
-				_calibrationData.DigitalTxGainWideband_NOTCONFIRMED		= (UInt16)this.nudDigitalTxGainWideband.Value;
-				_calibrationData.DigitalTxGainNarrowband_NOTCONFIRMED	= (UInt16)this.nudDigitalTxGainNarrowband.Value;
+				//_calibrationData.DigitalTxGainWideband_NOTCONFIRMED		= (UInt16)this.nudDigitalTxGainWideband.Value;
+				//_calibrationData.DigitalTxGainNarrowband_NOTCONFIRMED	= (UInt16)this.nudDigitalTxGainNarrowband.Value;
 				_calibrationData.DigitalRxGainWideband_NOTCONFIRMED		= (UInt16)this.nudDigitalRxGainWideband.Value;
 				_calibrationData.DigitalRxGainNarrowband_NOTCONFIRMED	= (UInt16)this.nudDigitalRxGainNarrowband.Value;
 
@@ -142,8 +142,8 @@ namespace DMR
 				this.nudAnalogTxDeviationCTCSSNarrowband.Value	= _calibrationData.AnalogTxDeviationCTCSSNarrowband;
 				this.nudlAnalogTxDeviationDCSWideband.Value		= _calibrationData.AnalogTxDeviationDCSWideband;
 				this.nudAnalogTxDeviationDCSNarrowband.Value	= _calibrationData.AnalogTxDeviationDCSNarrowband;
-				this.nudDigitalTxGainWideband.Value				= _calibrationData.DigitalTxGainWideband_NOTCONFIRMED;
-				this.nudDigitalTxGainNarrowband.Value			= _calibrationData.DigitalTxGainNarrowband_NOTCONFIRMED;
+				//this.nudDigitalTxGainWideband.Value				= _calibrationData.DigitalTxGainWideband_NOTCONFIRMED;
+				//this.nudDigitalTxGainNarrowband.Value			= _calibrationData.DigitalTxGainNarrowband_NOTCONFIRMED;
 				this.nudDigitalRxGainWideband.Value				= _calibrationData.DigitalRxGainWideband_NOTCONFIRMED;
 				this.nudDigitalRxGainNarrowband.Value			= _calibrationData.DigitalRxGainNarrowband_NOTCONFIRMED;
 

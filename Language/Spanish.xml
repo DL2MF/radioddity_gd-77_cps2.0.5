@@ -429,6 +429,9 @@
 			<MenuItem Id="tsmiEnglish" Text="Inglés" />
 			<MenuItem Id="tsmiChinese" Text="Español" />
       <MenuItem Id="tsmiExtras" Text="Extras" />
+      <MenuItem Id="tsmiContactsDownload" Text="Download contacts" />
+      <MenuItem Id="tsmiDMRID" Text="DMR ID" />
+      <MenuItem Id="tsmiCalibration" Text="Calibration viewer" />
     </MenuStrip>
 		<ContextMenuStrip>
 			<MenuItem Id="tsmiAdd" Text="Añadir" />
@@ -714,12 +717,13 @@
 			<Control Id="lblName" Text="Nombre" />
 		</Controls>
 	</ZoneForm>
-<DownloadContactsForm Text="Descargar Contactos desde 'Last Heard'">
+<DownloadContactsForm Text="Descargar Contactos">
     <Controls>
       <Control Id="lblMessage" Text="Introduzca prefijo de código ID de su region y pulse Descargar..." />
       <Control Id="btnImport" Text="Importar seleccionados" />
       <Control Id="btnSelectAll" Text="Seleccionar Todos" />
-      <Control Id="btnDownload" Text="Descargar Datos" />
+      <Control Id="btnDownload" Text="Descargar Datos URL" />
+      <Control Id="btnDownloadDMRMARC" Text="Descargar desde DRM MARC" />      
       <Control Id="lblIDStart" Text="Prefijo Regional" />
       <Control Id="txtIDStart" Text="505" />
       <Control Id="lblIDStartAlert" Text="Por favor, introduzca el código de prefijo de 3 digitos de su zona. Ej.: 214 España" />

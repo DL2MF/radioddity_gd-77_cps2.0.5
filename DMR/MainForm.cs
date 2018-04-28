@@ -621,7 +621,7 @@ namespace DMR
 			this.tsmiContactsDownload.Name = "tsmiContactsDownload";
 			//this.tsmiContactsDownload.ShortcutKeys = (Keys)131154;
 			this.tsmiContactsDownload.Size = new Size(156, 22);
-			this.tsmiContactsDownload.Text = "Contacts download";
+			this.tsmiContactsDownload.Text = "Download contacts";
 			this.tsmiContactsDownload.Click += this.tsbtnContactsDownload_Click;
 
 			this.tsmiDMRID.Name = "tsmiDMRID";
@@ -634,7 +634,7 @@ namespace DMR
 			this.tsmiCalibration.Name = "tsmiCalibration";
 			//this.tsmiCalibration.ShortcutKeys = (Keys)131154;
 			this.tsmiCalibration.Size = new Size(156, 22);
-			this.tsmiCalibration.Text = "Calibration";
+			this.tsmiCalibration.Text = "Calibration viewer";
 			this.tsmiCalibration.Enabled = true;
 			this.tsmiCalibration.Click += new EventHandler(this.tsbtnCalibration_Click);
 
@@ -2874,8 +2874,16 @@ namespace DMR
 			dlf.mainForm = this;
 			TreeNode treeNode = this.method_9(typeof(ContactsForm), this.tvwMain.Nodes);
 			dlf.treeNode = treeNode;
-		//	dlf.parentForm = ContactsForm;
-			dlf.ShowDialog();
+			try
+			{
+				dlf.ShowDialog();
+			}
+			catch (Exception)
+			{
+				Cursor.Current = Cursors.Default;
+				MessageBox.Show(Settings.dicCommon["UnableDownloadFromInternet"]);
+				return;
+			}
 		}
 
 		private void tsbtnDMRID_Click(object sender, EventArgs e)

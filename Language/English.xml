@@ -6,7 +6,7 @@
 	<Language Id="Eng" Text="English" />
 	<AboutForm Text="About">
 		<Controls>
-			<Control Id="lblVersion" Text="v3.0.6" />
+			<Control Id="lblVersion" Text="" />
 			<Control Id="lblCompany" Text="Radioddity and GD-77 Community" />
 			<Control Id="btnClose" Text="OK" />
 		</Controls>
@@ -428,8 +428,11 @@
 			<MenuItem Id="tsmiLanguage" Text="Language" />
 			<MenuItem Id="tsmiEnglish" Text="English" />
 			<MenuItem Id="tsmiChinese" Text="Chinese" />
-      <MenuItem Id="tsmiExtras" Text="Extras" />      
-		</MenuStrip>
+      <MenuItem Id="tsmiExtras" Text="Extras" />
+      <MenuItem Id="tsmiContactsDownload" Text="Download contacts" />
+      <MenuItem Id="tsmiDMRID" Text="DMR ID" />
+      <MenuItem Id="tsmiCalibration" Text="Calibration viewer" />      
+    </MenuStrip>
 		<ContextMenuStrip>
 			<MenuItem Id="tsmiAdd" Text="Add" />
 			<MenuItem Id="tsmiClear" Text="Clear" />
@@ -714,12 +717,13 @@
 			<Control Id="lblName" Text="Name" />
 		</Controls>
 	</ZoneForm>
-  <DownloadContactsForm Text="Download contacts from 'Last Heard'">
+  <DownloadContactsForm Text="Download contacts'">
     <Controls>
       <Control Id="lblMessage" Text="Enter the ID prefix code for your region and press Download..." />
       <Control Id="btnImport" Text="Import selected" />
       <Control Id="btnSelectAll" Text="Select all" />      
-      <Control Id="btnDownload" Text="Download 'Last Heard' data" />
+      <Control Id="btnDownload" Text="Download from URL" />
+      <Control Id="btnDownloadDMRMARC" Text="Download from DRM MARC" />      
       <Control Id="lblIDStart" Text="Region Prefix code" />
       <Control Id="lblMessageDownloading" Text="Downloading" />
       <Control Id="dgvDownloadeContacts" Text="ID,Callsign,Name,Last heard">
@@ -730,7 +734,7 @@
       </Control>      
     </Controls>
   </DownloadContactsForm>
-  <CalibrationForm Text="Download contacts from 'Last Heard'">
+  <CalibrationForm Text="Calibration viewer'">
     <Controls>
       <Control Id="btnSave" Text="Save" />
       <Control Id="btnCancel" Text="Cancel" />

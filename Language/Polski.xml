@@ -429,6 +429,9 @@
 			<MenuItem Id="tsmiEnglish" Text="Angielski" />
 			<MenuItem Id="tsmiChinese" Text="Chiński" />
       <MenuItem Id="tsmiExtras" Text="Extras" />
+      <MenuItem Id="tsmiContactsDownload" Text="Download contacts" />
+      <MenuItem Id="tsmiDMRID" Text="DMR ID" />
+      <MenuItem Id="tsmiCalibration" Text="Calibration viewer" />
     </MenuStrip>
 		<ContextMenuStrip>
 			<MenuItem Id="tsmiAdd" Text="Dodaj" />
@@ -714,12 +717,13 @@
 			<Control Id="lblName" Text="Nazwa" />
 		</Controls>
 	</ZoneForm>
-  <DownloadContactsForm Text="Download contacts from 'Last Heard'">
+  <DownloadContactsForm Text="Download contacts">
     <Controls>
       <Control Id="lblMessage" Text="Enter the ID prefix code for your region and press Download..." />
       <Control Id="btnImport" Text="Import selected" />
       <Control Id="btnSelectAll" Text="Select all" />
-      <Control Id="btnDownload" Text="Download 'Last Heard' data" />
+      <Control Id="btnDownload" Text="Download from URL" />
+      <Control Id="btnDownloadDMRMARC" Text="Download from DRM MARC" />
       <Control Id="lblIDStart" Text="Region Prefix code" />
       <Control Id="lblMessageDownloading" Text="Downloading" />
       <Control Id="dgvDownloadeContacts" Text="ID,Callsign,Name,Last heard">
@@ -729,8 +733,8 @@
         <ControlItem Id="" Text="Last heard" />
       </Control>
     </Controls>
-  </DownloadContactsForm>  
-	<Commons>
+  </DownloadContactsForm>
+  <Commons>
 		<Item Id="None" Text="None" />
 		<Item Id="Selected" Text="Selected" />
 		<Item Id="RadioIdNotEmpty" Text="ID radia nie może być puste!" />
